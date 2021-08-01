@@ -1,7 +1,7 @@
 const express = require("express");
 const moduleToFetch = require("./index");
 const getDatabase = moduleToFetch.getDatabase;
-const newEntryToDatabase = moduleToFetch.newEntryToDatabase;
+// const newEntryToDatabase = moduleToFetch.newEntryToDatabase;
 const port = 8000;
 
 const app = express();
@@ -16,14 +16,6 @@ app.use(
 app.get("/users", async (req, res) => {
   const users = await getDatabase();
   res.json(users);
-});
-
-app.post("/submit-form", async (req, res) => {
-  const name = req.body.name;
-  const role = req.body.role;
-  await newEntryToDatabase(name, role);
-  res.redirect("/");
-  res.end();
 });
 
 app.listen(port, console.log(`Server started on ${port}`));

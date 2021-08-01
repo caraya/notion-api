@@ -10,7 +10,7 @@ html {
   position: relative;
 }
 
-#banner {
+.banner {
   height: 50px;
 
   display: flex;
@@ -22,119 +22,29 @@ html {
   font-weight: bold;
 }
 
-#wrapper {
+.container {
+  /* display flex */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 50px);
-}
-
-#container {
+  /* wrap the row when we reach the width of the container */
+  flex-flow: row wrap;
+  /* use space between the items */
+  justify-content: space-between;
+  /* Margins */
   width: 80vw;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 200px;
-  gap: 20px;
+  margin: 0 auto;
 }
 
-.userContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 10px;
-}
-
-#newUserButton {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-
-  padding: 10px 20px;
-
-  background-color: #ef4444;
-  color: white;
-  font-weight: bold;
-
-  border: none;
-  border-radius: 4px;
-}
-
-#addUserFormContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  height: 100vh;
-  width: 100vw;
-
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
-}
-
-#closeFormButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  padding: 10px 20px;
-
-  background-color: black;
-  color: white;
-  font-weight: bold;
-
-  border: none;
-  border-radius: 4px;
-}
-
-#formTitle {
-  margin-bottom: 40px;
-}
-
-#addUserForm {
-  padding: 50px 100px;
-  width: 300px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: white;
-
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-#addUserForm input {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.inputField {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-}
-
-#submitFormInput {
-  padding: 10px 20px;
-  margin-bottom: none;
-
-  background-color: #ef4444;
-  color: white;
-  font-weight: bold;
-
-  border: 1px solid #ef4444;
-  border-radius: 4px;
+.card{
+  width:250px;
+  height: 300px;
+  border: thin solid black;
+  margin: 1em 0;
+  padding: 1em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* Handle word wrap and word breal */
+  overflow-wrap: break-word;
+  word-break: break-all;
+  /* Box Shadow*/
+  box-shadow: 6px 1px 1px rgba(0, 0, 0, 0.2);
 }
